@@ -1,2 +1,0 @@
-# RAC
-IG-RAC Project
