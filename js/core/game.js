@@ -1,11 +1,9 @@
-var i = 0;
-            
-function test()
-{
-    requestAnimationFrame(test);
+var player = {
+    name: "Sujit",
+    age: 43,
+    sayHello: function () {
+        console.log("my name is " + name);
+    }
+};
 
-    console.log("being called " + i);
-    i++;
-}
-
-test();
+player.sayHello();
