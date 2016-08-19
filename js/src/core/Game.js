@@ -156,12 +156,13 @@ BasicGame.Game.prototype = {
         //console.log("pointer X = " + pointer.x);
         //console.log("world X = " + pointer.worldX);
         //console.log("pointer Y = " + pointer.y);
+        console.log("game bounds height = " + this.world.bounds.height);
 
         //BORDERS OF THE GAME ROOM
         if(pointer.x < 100 ){
             this.mouseTargetX = 100;
-        }else if (pointer.x > 1900 ){
-            this.mouseTargetX = 1900;// - this.hero.body.halfWidth;
+        }else if (pointer.x > (this.world.bounds.width - 50) ){
+            this.mouseTargetX = (this.world.bounds.width - 50);// - this.hero.body.halfWidth;
         } else {
             this.mouseTargetX = pointer.worldX;
         }
