@@ -19,8 +19,6 @@ BasicGame.Game = function (game) {
     this.physics;	//	the physics manager
     this.rnd;		//	the repeatable random number generator
 
-    //	You can use any of these from any function within this State.
-    //	But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
     this.hero = null;
 
     this.mouseTargetX = null;
@@ -34,16 +32,13 @@ BasicGame.Game.prototype = {
 
 	create: function () {
 
-		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
-        this.roomCreate();
+		this.roomCreate();
         //this.inventoryCreate();
         this.heroCreate();
-
-
         //this.lungurCreate();
-        this.game.world.setBounds(0, 0, 1920, 600);
-        this.game.camera.follow(this.hero);
+        
+        this.world.setBounds(0, 0, 1920, 600);
+        this.camera.follow(this.hero);
 	},
 
 	update: function () {
@@ -67,7 +62,7 @@ BasicGame.Game.prototype = {
         this.hero.animations.play('idle', 6, true);
         this.hero.isWalking = false;
 
-        this.game.input.onDown.add(this.moveSprite, this);
+        this.input.onDown.add(this.moveSprite, this);
     },
 
     roomCreate: function(){
@@ -123,27 +118,7 @@ BasicGame.Game.prototype = {
 
     heroUpdate: function(){
 
-        if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
-        {
-            this.hero.x -= 4;
-            this.hero.isWalking = true;
-            this.hero.scale.x = 1;
-        }
-        else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
-        {
-            this.hero.x += 4;
-            this.hero.isWalking = true;
-            this.hero.scale.x = -1;
-        } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP))
-        {
-            this.hero.y -= 4;
-            this.hero.isWalking = true;
-        }
-        else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
-        {
-            this.hero.y += 4;
-            this.hero.isWalking = true;
-        }  else if(this.mouseTargetX != null || this.mouseTargetY != null) {
+        if(this.mouseTargetX != null || this.mouseTargetY != null) {
 
             if(this.hero.x != this.mouseTargetX || this.hero.y != this.mouseTargetY){
                 this.hero.isWalking = true;
@@ -164,10 +139,8 @@ BasicGame.Game.prototype = {
 
 	quitGame: function (pointer) {
 
-		//	Here you should destroy anything you no longer need.
 		//	Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
-		//	Then let's go back to the main menu.
 		this.game.state.start('MainMenu');
 
 	},
@@ -180,8 +153,8 @@ BasicGame.Game.prototype = {
 
         }
 
-        console.log("pointer X = " + pointer.x);
-        console.log("world X = " + pointer.worldX);
+        //console.log("pointer X = " + pointer.x);
+        //console.log("world X = " + pointer.worldX);
         //console.log("pointer Y = " + pointer.y);
 
         //BORDERS OF THE GAME ROOM
@@ -202,21 +175,6 @@ BasicGame.Game.prototype = {
         }
 
 
-        //TODO
-
-        var length = 1000,
-            points = [
-                {x: 0, y: 0},
-                {x: 0, y: length},
-                {x: length, y: 10},
-                {x: -length, y: -10},
-                {x: 0, y: -length},
-                {x: 0, y: 0}
-            ];
-
-        //console.log(this.isPointInPoly(points, {x:this.mouseTargetY, y:this.mouseTargetY}));
-
-
         //this.hero.rotation = this.game.physics.angleToPointer(this.hero, pointer);
         this.hero.isWalking = true;
         if(this.hero.x < this.mouseTargetX) {
@@ -231,13 +189,4 @@ BasicGame.Game.prototype = {
         tween = this.game.add.tween(this.hero).to({ x: this.mouseTargetX, y: this.mouseTargetY }, duration, Phaser.Easing.Linear.None, true);
 
     }
-    ,
-    isPointInPoly :function(poly, pt){
-        for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
-            ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
-                && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
-            && (c = !c);
-        return c;
-    }
-
 };
