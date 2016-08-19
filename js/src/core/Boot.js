@@ -27,14 +27,14 @@ BasicGame.Boot.prototype = {
 			//	If you have any desktop specific settings, they can go in here
             this.game.scale.pageAlignHorizontally = true;
             this.game.scale.pageAlignVertically = true;
-
+            
             /*
-            this.game.stage.scale.minWidth = 400;
-            this.game.stage.scale.minHeight = 300;
-            this.game.stage.scale.maxWidth = 800;
-            this.game.stage.scale.maxHeight = 600;
+            this.game.scale.minWidth = 400;
+            this.game.scale.minHeight = 300;
+            this.game.scale.maxWidth = 800;
+            this.game.scale.maxHeight = 600;
             */
-
+            
             this.game.scale.setShowAll();
             this.game.scale.refresh();
 

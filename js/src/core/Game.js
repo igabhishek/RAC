@@ -42,7 +42,8 @@ BasicGame.Game.prototype = {
 
 
         //this.lungurCreate();
-
+        this.game.world.setBounds(0, 0, 1920, 600);
+        this.game.camera.follow(this.hero);
 	},
 
 	update: function () {
@@ -179,16 +180,17 @@ BasicGame.Game.prototype = {
 
         }
 
-        //console.log("pointer X = " + pointer.x);
+        console.log("pointer X = " + pointer.x);
+        console.log("world X = " + pointer.worldX);
         //console.log("pointer Y = " + pointer.y);
 
         //BORDERS OF THE GAME ROOM
         if(pointer.x < 100 ){
             this.mouseTargetX = 100;
-        }else if (pointer.x > 900 ){
-            this.mouseTargetX = 900;// - this.hero.body.halfWidth;
+        }else if (pointer.x > 1900 ){
+            this.mouseTargetX = 1900;// - this.hero.body.halfWidth;
         } else {
-            this.mouseTargetX = pointer.x;
+            this.mouseTargetX = pointer.worldX;
         }
 
         if(pointer.y > 650){
