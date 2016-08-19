@@ -12,6 +12,8 @@ InfiniteScroller.Game.prototype = {
 
     create: function() {
         
+        levelDataManager.fillData(this.game.cache.getJSON('levelData'));
+        
         //create player and walk animation
         this.player = this.game.add.sprite(this.game.width/2, this.game.height - 350, 'grant');
         this.player.animations.add('grantrun');
@@ -58,12 +60,32 @@ InfiniteScroller.Game.prototype = {
 
         //move player with cursor keys
         this.cursors = this.game.input.keyboard.createCursorKeys();
+        
+        this.scratches = 0;
+        this.wraps = 0;
+        this.points = 0;
+        this.wrapping = true;
+        this.stopped = false;
+        this.maxScratches = 5;
+        
+        var style1 = { font: "20px Arial", fill: "#ff0"};
+        var t1 = this.game.add.text(10, 20, "Points:", style1);
+        var t2 = this.game.add.text(this.game.width-300, 20, "Remaining Flea Scratches:", style1);
+        t1.fixedToCamera = true;
+        t2.fixedToCamera = true;
+
+        var style2 = { font: "26px Arial", fill: "#00ff00"};
+        this.pointsText = this.game.add.text(80, 18, "", style2);
+        this.fleasText = this.game.add.text(this.game.width-50, 18, "", style2);
+        //this.refreshStats();
+        this.pointsText.fixedToCamera = true;
+        this.fleasText.fixedToCamera = true;
     },
 
     update: function() {
         
         this.game.physics.arcade.collide(this.player, this.ground, this.playerHit, null, this);
-        this.game.physics.arcade.collide(this.player, this.fleas, this.playerBit, null, this);
+        this.game.physics.arcade.collide(this.player, this.fleas, this.playerHit, null, this);
         this.game.physics.arcade.overlap(this.player, this.mounds, this.collect, this.checkRun, this);
 
     },

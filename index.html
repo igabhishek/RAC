@@ -9,10 +9,10 @@
         <title>Indusgeeks RAC Module 1</title>
         
         <script src="js/lib/phaser.js"></script>
-        <script src="js/src/Boot.js"></script>
-        <script src="js/src/Preload.js"></script>
-        <script src="js/src/MainMenu.js"></script>
-        <script src="js/src/Game.js"></script>
+        <script src="js/src/core/Boot.js"></script>
+        <script src="js/src/core/Preloader.js"></script>
+        <script src="js/src/core/MainMenu.js"></script>
+        <script src="js/src/core/Game.js"></script>
         
         <style>
            body {
@@ -23,6 +23,23 @@
     </head>
     <body>
         <div id="gameContainer"></div>
-        <script src="js/src/main.js"></script>
+        
+        <script type="text/javascript">
+
+            window.onload = function() {
+
+                var game = new Phaser.Game(1024, 672, Phaser.AUTO, 'gameContainer');
+
+                game.state.add('Boot', BasicGame.Boot);
+                game.state.add('Preloader', BasicGame.Preloader);
+                game.state.add('MainMenu', BasicGame.MainMenu);
+                game.state.add('Game', BasicGame.Game);
+
+                game.state.start('Boot');
+
+            };
+
+        </script>
+
     </body>
 </html>

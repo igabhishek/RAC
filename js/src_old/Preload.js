@@ -24,6 +24,8 @@ InfiniteScroller.Preload.prototype = {
         this.load.image('mound', 'assets/images/rock.png');
         this.load.image('flea', 'assets/images/flea.png');
         
+        this.game.load.json('levelData', 'assets/data/level.json');
+        
     },
     
     create: function() {
