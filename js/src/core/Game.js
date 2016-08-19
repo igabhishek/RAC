@@ -78,36 +78,22 @@ BasicGame.Game.prototype = {
 
     roomCreate: function(){
         
-        console.log(this.levelDataJSON.backgrounds.length);
-        console.log(this.levelDataJSON.backgroundProp.width);
+        //console.log(this.levelDataJSON.backgrounds.length);
+        //console.log(this.levelDataJSON.backgroundProp.width);
         
         //background
-        for(var i = 0; i < this.levelDataJSON.backgrounds.length; i++)
+        for(var i = 0; i < this.levelDataJSON.layer1.number; i++)
         {
-            this.bg = this.game.add.sprite(this.levelDataJSON.backgroundProp.width * i, -200, 'bg0' + (i + 1));
+            this.layer1 = this.game.add.sprite(250 * i, this.levelDataJSON.layer1.y, 'bg', this.levelDataJSON.layer1.items[Math.floor(Math.random() * this.levelDataJSON.layer1.items.length)]);
         }
         
-        //lampkey
-        this.lampkey = this.game.add.sprite(680, 220, 'lampkey');
-        this.lampkey.anchor.setTo(0, 0);
-        this.lampkey.animations.add('off',[
-            'lampa.png'
-        ]);
-        this.lampkey.animations.add('on',[
-            'lampa2.png'
-        ]);
-        this.lampkey.animations.play('off', 6, true);
-
-        //enables all kind of input actions on this image (click, etc)
-        this.lampkey.inputEnabled=true;
-
-        this.lampkey.events.onInputDown.add(doSomething,this);
-
-        function doSomething() {
-            // will only ever be called once, when the the input is down
-            console.log("123");
+        for(var j = 0; j < this.levelDataJSON.layer2.number; j++)
+        {
+            //console.log(this.levelDataJSON.layer2.items[Math.floor(Math.random() * this.levelDataJSON.layer2.items.length)]);
+            this.layer2 = this.game.add.sprite(50 * j, this.levelDataJSON.layer2.y, 'bg', this.levelDataJSON.layer2.items[Math.floor(Math.random() * this.levelDataJSON.layer2.items.length)]);
         }
-
+        
+        //this.bg = this.game.add.sprite(0, 0, 'bg', 'castle_beige.png');
 
     },
     inventoryCreate: function(){

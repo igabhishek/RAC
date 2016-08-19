@@ -42,6 +42,7 @@ BasicGame.Preloader.prototype = {
         this.load.atlasJSONHash('lampkey', 'assets/images/lampkey.png', 'assets/images/lampkey.json');
         this.load.atlasJSONHash('hero', 'assets/images/walk.png', 'assets/images/walk.json');
         this.load.atlasJSONHash('lungur', 'assets/images/lungur.png', 'assets/images/lungur.js');
+        this.load.atlasJSONHash('bg', 'assets/images/bg.png', 'assets/images/bg.json');
         
         this.load.json('config', 'assets/data/config.json');
         this.load.json('leveldata', 'assets/data/levelData.json');

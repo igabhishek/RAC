@@ -1,8 +1,18 @@
 {
     "backgrounds":["01", "02", "03", "04", "05", "06", "07"],
     "backgroundProp": { "width": 1920, "height": 1080 },
-    "layer1":[],
-    "layer2":[],
+    "layer1":
+    {
+        "items":["castle_beige.png", "castle_grey.png", "castle_wall.png"],
+        "number":20,
+        "y":50
+    },
+    "layer2":
+    {
+        "items": ["grass1.png", "grass2.png"],
+        "number": 50,
+        "y": 250
+    },
     "layer3":[],
     "layer4":[],
     "layer5":[]
