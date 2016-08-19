@@ -10,7 +10,7 @@
     "layer2":
     {
         "items": ["grass1.png", "grass2.png"],
-        "number": 50,
+        "number": 500,
         "y": 250
     },
     "layer3":[],
