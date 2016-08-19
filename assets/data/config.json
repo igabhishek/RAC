@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "type": "development",
+    "gamebounds": 
+        {
+            "width": 1920, 
+            "height": 600
+        }
+}

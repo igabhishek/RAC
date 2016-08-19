@@ -1,0 +1,9 @@
+{
+    "backgrounds":["01", "02", "03", "04", "05", "06", "07"],
+    "backgroundProp": { "width": 1920, "height": 1080 },
+    "layer1":[],
+    "layer2":[],
+    "layer3":[],
+    "layer4":[],
+    "layer5":[]
+}

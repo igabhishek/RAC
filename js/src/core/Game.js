@@ -25,31 +25,42 @@ BasicGame.Game = function (game) {
     this.mouseTargeY = null;
 
     this.tween;
-
+    
+    this.configJSON;
+    this.levelDataJSON;
+    
+    this.layer1;
+    this.layer2;
+    this.layer3;
+    this.layer4;
+    this.layer5;
 };
 
 BasicGame.Game.prototype = {
 
 	create: function () {
-
+        
+        this.configJSON = this.cache.getJSON('config');
+        this.levelDataJSON = this.cache.getJSON('leveldata');
+        
 		this.roomCreate();
         //this.inventoryCreate();
         this.heroCreate();
         //this.lungurCreate();
         
-        this.world.setBounds(0, 0, 1920, 600);
+        //this.world.setBounds(0, 0, this.configJSON.gamebounds.width, this.configJSON.gamebounds.height);
+        this.world.setBounds(0, 0, this.levelDataJSON.backgrounds.length * this.levelDataJSON.backgroundProp.width, this.configJSON.gamebounds.height);
         this.camera.follow(this.hero);
 	},
 
 	update: function () {
 
-        //	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
         this.heroUpdate();
-
 
 	},
 
     heroCreate: function(){
+        
         this.hero = this.game.add.sprite(this.game.world.centerX, 450, 'hero');
         this.hero.anchor.setTo(0.5, 1);
         //this.hero.scale.setTo(2, 2);
@@ -66,10 +77,16 @@ BasicGame.Game.prototype = {
     },
 
     roomCreate: function(){
-
+        
+        console.log(this.levelDataJSON.backgrounds.length);
+        console.log(this.levelDataJSON.backgroundProp.width);
+        
         //background
-        this.bg = this.game.add.sprite(0,0, 'room');
-
+        for(var i = 0; i < this.levelDataJSON.backgrounds.length; i++)
+        {
+            this.bg = this.game.add.sprite(this.levelDataJSON.backgroundProp.width * i, -200, 'bg0' + (i + 1));
+        }
+        
         //lampkey
         this.lampkey = this.game.add.sprite(680, 220, 'lampkey');
         this.lampkey.anchor.setTo(0, 0);
@@ -100,8 +117,7 @@ BasicGame.Game.prototype = {
     lungurCreate: function(){
         //
         /*
-
-
+         
          this.hero = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'lungur');
          this.hero.anchor.setTo(0.5, 0.5);
          //this.hero.scale.setTo(2, 2);
@@ -156,7 +172,7 @@ BasicGame.Game.prototype = {
         //console.log("pointer X = " + pointer.x);
         //console.log("world X = " + pointer.worldX);
         //console.log("pointer Y = " + pointer.y);
-        console.log("game bounds height = " + this.world.bounds.height);
+        //console.log("game bounds height = " + this.world.bounds.height);
 
         //BORDERS OF THE GAME ROOM
         if(pointer.x < 100 ){
