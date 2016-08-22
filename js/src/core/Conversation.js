@@ -30,7 +30,7 @@ BasicGame.Conversation.prototype = {
         this.character1.scale.setTo(-1.5, 1.5);
         this.character2.scale.setTo(1.5, 1.5);
         
-        this.exitButton = this.game.add.button(500, 400, 'playButton', this.switchToGameState, this, 2, 1, 0);
+        this.exitButton = this.game.add.button(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.9), 'playButton', this.switchToGameState, this, 2, 1, 0);
 	},
     
     switchToGameState: function() {
