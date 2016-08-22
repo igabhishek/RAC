@@ -4,34 +4,50 @@ DataManager = new function(){
     this.moduleJSON = null;
     this.conversationEntries = new Array();
     
-    this.justPlayedConversation = 0;
+    this.lastPlayedConversation = "";
+    this.conversationInProgress = "";
+    
+    this.root = "";
     
     this.PopulateConversationEntries = function(){
         
-        for (var key in this.moduleJSON)
+        this.root = this.moduleJSON.root;
+        
+        for (var key in this.moduleJSON.conversations)
         {
             var conversationObject = {};
             conversationObject.id = key;
             conversationObject.dialogues = new Array();
             
-            for(var i = 0; i < this.moduleJSON[key].dialogues.length; i++)            
+            for(var i = 0; i < this.moduleJSON.conversations[key].dialogues.length; i++)            
             {
                 var dialogueObject = {};
-                dialogueObject.id = this.moduleJSON[key].dialogues[i]["id"];
-                dialogueObject.whosays = this.moduleJSON[key].dialogues[i]["whosays"];
-                dialogueObject.thedialogue = this.moduleJSON[key].dialogues[i]["thedialogue"];
-                dialogueObject.duration = this.moduleJSON[key].dialogues[i]["duration"];
-                dialogueObject.next = this.moduleJSON[key].dialogues[i]["next"];                
+                dialogueObject.id = this.moduleJSON.conversations[key].dialogues[i]["id"];
+                dialogueObject.whosays = this.moduleJSON.conversations[key].dialogues[i]["whosays"];
+                dialogueObject.thedialogue = this.moduleJSON.conversations[key].dialogues[i]["thedialogue"];
+                dialogueObject.duration = this.moduleJSON.conversations[key].dialogues[i]["duration"];
+                dialogueObject.next = this.moduleJSON.conversations[key].dialogues[i]["next"];                
                 
                 conversationObject.dialogues.push(dialogueObject);
             }
             
             conversationObject.prerequisites = new Array();
             
+            conversationObject.next = this.moduleJSON.conversations[key].next;
+            
             this.conversationEntries.push(conversationObject);
         }
+    };
+    
+    this.GetConversationWithID = function(conversationID){
         
-        console.log(this.conversationEntries);
-    }
+        for(var i = 0; i < this.conversationEntries.length; i++){
+            if(this.conversationEntries[i].id == conversationID)
+            {
+                return this.conversationEntries[i];
+            }
+        }
+        
+    };
     
 };

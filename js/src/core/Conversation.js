@@ -13,10 +13,11 @@ BasicGame.Conversation = function (game) {
 
 BasicGame.Conversation.prototype = {
     
-    init: function(character1Name, character2Name) 
-    {   
+    init: function(character1Name, character2Name) {
+        
         this.character1Name = character1Name;
         this.character2Name = character2Name;
+        
     },
     
     create: function () {
@@ -31,7 +32,28 @@ BasicGame.Conversation.prototype = {
         this.character2.scale.setTo(1.5, 1.5);
         
         this.exitButton = this.game.add.button(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.9), 'playButton', this.switchToGameState, this, 2, 1, 0);
+        
+        this.initializeConversation();
+        
 	},
+    
+    initializeConversation: function() {
+        
+        if(DataManager.lastPlayedConversation == ""){
+            DataManager.conversationInProgress = DataManager.root;
+        }
+        else{
+            DataManager.conversationInProgress = DataManager.GetConversationWithID(DataManager.lastPlayedConversation).next;
+        }
+        
+        this.startConversation();
+    },
+    
+    startConversation: function() {
+        
+        console.log("starting the conversation.... " + DataManager.conversationInProgress);
+        
+    },
     
     switchToGameState: function() {
         

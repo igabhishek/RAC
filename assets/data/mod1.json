@@ -1,46 +1,54 @@
 {
-    "conversation01":
+    "root":"conversation01",
+    "conversations":
     {
-        "dialogues":
-        [
-            {
-                "id":"dialogue001",
-                "whosays":"hero",
-                "thedialogue":"This app is awesome!",
-                "duration":"3",
-                "next":"dialogue002"
-            },
-            {
-                "id":"dialogue002",
-                "whosays":"npc",
-                "thedialogue":"I agree! I think the developer is doing a great job!",
-                "duration":"4",
-                "next":"dialogue003"
-            },
-            {
-                "id":"dialogue003",
-                "whosays":"hero",
-                "thedialogue":"Yes! I guess he is our saviour!",
-                "duration":"4",
-                "next":"dialogue004"
-            },
-            {
-                "id":"dialogue004",
-                "whosays":"npc",
-                "thedialogue":"The world is in safe hands!",
-                "duration":"3",
-                "next":"finish"
-            }
-        ],
-        
-        "prerequisites": []
-    },
+        "conversation01":
+        {
+            "dialogues":
+            [
+                {
+                    "id":"dialogue001",
+                    "whosays":"hero",
+                    "thedialogue":"This app is awesome!",
+                    "duration":"3",
+                    "next":"dialogue002"
+                },
+                {
+                    "id":"dialogue002",
+                    "whosays":"npc",
+                    "thedialogue":"I agree! I think the developer is doing a great job!",
+                    "duration":"4",
+                    "next":"dialogue003"
+                },
+                {
+                    "id":"dialogue003",
+                    "whosays":"hero",
+                    "thedialogue":"Yes! I guess he is our saviour!",
+                    "duration":"4",
+                    "next":"dialogue004"
+                },
+                {
+                    "id":"dialogue004",
+                    "whosays":"npc",
+                    "thedialogue":"The world is in safe hands!",
+                    "duration":"3",
+                    "next":"finish"
+                }
+            ],
 
-    "conversation02":
-    {
-        "dialogues":
-        [
-            
-        ]
+            "prerequisites": [],
+            "next":"conversation02"
+        },
+
+        "conversation02":
+        {
+            "dialogues":
+            [
+
+            ],
+
+            "prerequisites": [],
+            "next":"finish"
+        }
     }
 }
