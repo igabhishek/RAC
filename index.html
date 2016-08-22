@@ -13,6 +13,7 @@
         <script src="js/src/core/Preloader.js"></script>
         <script src="js/src/core/MainMenu.js"></script>
         <script src="js/src/core/Game.js"></script>
+        <script src="js/src/core/Conversation.js"></script>
         
         <style>
            body {
@@ -34,6 +35,7 @@
                 game.state.add('Preloader', BasicGame.Preloader);
                 game.state.add('MainMenu', BasicGame.MainMenu);
                 game.state.add('Game', BasicGame.Game);
+                game.state.add('Conversation', BasicGame.Conversation);
 
                 game.state.start('Boot');
 

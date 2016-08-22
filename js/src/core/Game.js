@@ -20,6 +20,7 @@ BasicGame.Game = function (game) {
     this.rnd;		//	the repeatable random number generator
 
     this.hero = null;
+    this.npc = null;
 
     this.mouseTargetX = null;
     this.mouseTargeY = null;
@@ -45,8 +46,8 @@ BasicGame.Game.prototype = {
         
 		this.roomCreate();
         //this.inventoryCreate();
+        this.lungurCreate();
         this.heroCreate();
-        //this.lungurCreate();
         
         //this.world.setBounds(0, 0, this.configJSON.gamebounds.width, this.configJSON.gamebounds.height);
         this.world.setBounds(0, 0, this.levelDataJSON.backgrounds.length * this.levelDataJSON.backgroundProp.width, this.configJSON.gamebounds.height);
@@ -56,6 +57,15 @@ BasicGame.Game.prototype = {
 	update: function () {
 
         this.heroUpdate();
+        
+        if(this.npc.input.pointerOver())
+        {
+            this.npc.alpha = 1;
+        }
+        else
+        {
+            this.npc.alpha = 0.5;
+        }
 
 	},
 
@@ -96,26 +106,30 @@ BasicGame.Game.prototype = {
         //this.bg = this.game.add.sprite(0, 0, 'bg', 'castle_beige.png');
 
     },
+    
     inventoryCreate: function(){
         this.inventory = this.game.add.sprite(0,this.game.world.height - 173, 'inventory');
     },
 
     lungurCreate: function(){
-        //
-        /*
-         
-         this.hero = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'lungur');
-         this.hero.anchor.setTo(0.5, 0.5);
-         //this.hero.scale.setTo(2, 2);
-         this.hero.animations.add('idle',[
-         'idle00.png'
-         ]);
-         this.hero.animations.add('walk',[
-         'walk01.png','walk02.png','walk04.png','walk05.png'
-         ]);
-         this.hero.animations.play('idle', 6, true);
-         */
+        
+        this.npc = this.game.add.sprite(this.levelDataJSON.npc.x, 300, 'lungur');
+        this.npc.anchor.setTo(0.5, 0.5);
+        //this.hero.scale.setTo(2, 2);
+        this.npc.animations.add('idle',[
+        'idle00.png'
+        ]);
+        this.npc.animations.add('walk',[
+        'walk01.png','walk02.png','walk04.png','walk05.png'
+        ]);
+        this.npc.animations.play('idle', 6, true);
+        this.npc.inputEnabled = true;
+        this.npc.events.onInputDown.add(this.clicklistener, this);
 
+    },
+    
+    clicklistener: function(){
+         this.game.state.start('Conversation', true, false, 'hero', 'lungur');   
     },
 
     heroUpdate: function(){
