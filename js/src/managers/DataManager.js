@@ -17,6 +17,7 @@ DataManager = new function(){
         {
             var conversationObject = {};
             conversationObject.id = key;
+            conversationObject.root = this.moduleJSON.conversations[key].root;
             conversationObject.dialogues = new Array();
             
             for(var i = 0; i < this.moduleJSON.conversations[key].dialogues.length; i++)            
@@ -42,9 +43,30 @@ DataManager = new function(){
     this.GetConversationWithID = function(conversationID){
         
         for(var i = 0; i < this.conversationEntries.length; i++){
-            if(this.conversationEntries[i].id == conversationID)
-            {
+            
+            if(this.conversationEntries[i].id == conversationID){
+                
                 return this.conversationEntries[i];
+                
+            }
+        }
+        
+    };
+    
+    this.GetDialogueWithID = function(conversationID, dialogueID){
+        
+        for(var i = 0; i < this.conversationEntries.length; i++){
+            
+            if(this.conversationEntries[i].id == conversationID){
+                
+                for(var j = 0; j < this.conversationEntries[i].dialogues.length; j++){
+                    
+                    if(this.conversationEntries[i].dialogues[j].id == dialogueID){
+                        
+                        return this.conversationEntries[i].dialogues[j];
+                        
+                    }                    
+                }
             }
         }
         

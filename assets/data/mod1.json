@@ -4,6 +4,7 @@
     {
         "conversation01":
         {
+            "root":"dialogue001",
             "dialogues":
             [
                 {
@@ -42,6 +43,7 @@
 
         "conversation02":
         {
+            "root":"",
             "dialogues":
             [
 
