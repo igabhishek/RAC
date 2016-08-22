@@ -46,6 +46,7 @@ BasicGame.Preloader.prototype = {
         
         this.load.json('config', 'assets/data/config.json');
         this.load.json('leveldata', 'assets/data/levelData.json');
+        this.load.json('moduledata', 'assets/data/mod1.json');
 
 	},
 

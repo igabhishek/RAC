@@ -1,0 +1,43 @@
+{
+    "conversation01":
+    {
+        "dialogues":
+        [
+            {
+                "id":"dialogue001",
+                "whosays":"hero",
+                "thedialogue":"This app is awesome!",
+                "duration":"3",
+                "next":"dialogue002"
+            },
+            {
+                "id":"dialogue002",
+                "whosays":"npc",
+                "thedialogue":"I agree! I think the developer has done a great job!",
+                "duration":"4",
+                "next":"dialogue003"
+            },
+            {
+                "id":"dialogue003",
+                "whosays":"hero",
+                "thedialogue":"Yes! I guess he is our saviour!",
+                "duration":"4",
+                "next":"dialogue004"
+            },
+            {
+                "id":"dialogue004",
+                "whosays":"hero",
+                "thedialogue":"The world is in safe hands!",
+                "duration":"3",
+                "next":"finish"
+            }
+        ],
+        
+        "prerequisites": []
+    },
+
+    "conversation02":
+    {
+
+    }
+}

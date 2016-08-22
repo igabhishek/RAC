@@ -124,11 +124,11 @@ BasicGame.Game.prototype = {
         ]);
         this.npc.animations.play('idle', 6, true);
         this.npc.inputEnabled = true;
-        this.npc.events.onInputDown.add(this.clicklistener, this);
+        this.npc.events.onInputDown.add(this.switchToConversationState, this);
 
     },
     
-    clicklistener: function(){
+    switchToConversationState: function(){
          this.game.state.start('Conversation', true, false, 'hero', 'lungur');   
     },
 
