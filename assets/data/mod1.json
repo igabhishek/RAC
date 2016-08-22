@@ -13,7 +13,7 @@
             {
                 "id":"dialogue002",
                 "whosays":"npc",
-                "thedialogue":"I agree! I think the developer has done a great job!",
+                "thedialogue":"I agree! I think the developer is doing a great job!",
                 "duration":"4",
                 "next":"dialogue003"
             },
@@ -26,7 +26,7 @@
             },
             {
                 "id":"dialogue004",
-                "whosays":"hero",
+                "whosays":"npc",
                 "thedialogue":"The world is in safe hands!",
                 "duration":"3",
                 "next":"finish"
@@ -38,6 +38,9 @@
 
     "conversation02":
     {
-
+        "dialogues":
+        [
+            
+        ]
     }
 }
