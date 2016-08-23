@@ -25,8 +25,11 @@ BasicGame.Conversation.prototype = {
     create: function () {
         
         this.dialogueCloud = this.game.add.sprite(0, 0, 'inventory');
-        this.dialogueText = this.game.add.text(0, 0, "test");
-        
+        this.dialogueText = this.game.add.bitmapText(this.dialogueCloud.width/2, this.dialogueCloud.height/2, 'carrier_command', "", 24);
+        this.dialogueText.anchor.setTo(0.5, 0.5);
+        this.dialogueText.align = "center";
+        this.dialogueText.maxWidth = this.dialogueCloud.width - 50;
+                
         this.character1 = this.game.add.sprite(Math.floor(this.game.width * 0.2), Math.floor(this.game.height * 0.6), this.character1Name);
         this.character2 = this.game.add.sprite(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.6), this.character2Name);
         
@@ -36,7 +39,7 @@ BasicGame.Conversation.prototype = {
         this.character1.scale.setTo(-1.5, 1.5);
         this.character2.scale.setTo(1.5, 1.5);
         
-        this.exitButton = this.game.add.button(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.9), 'playButton', this.switchToGameState, this, 2, 1, 0);
+        //this.exitButton = this.game.add.button(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.9), 'playButton', this.switchToGameState, this, 2, 1, 0);
         
         this.initializeConversation();
         
@@ -67,6 +70,8 @@ BasicGame.Conversation.prototype = {
         var currentDialogueObj = DataManager.GetDialogueWithID(DataManager.conversationInProgress, currentDialogueID);
         
         console.log(currentDialogueObj.thedialogue);
+        
+        this.dialogueText.text = currentDialogueObj.thedialogue;
         
         if(currentDialogueObj.next != "finish"){
             
