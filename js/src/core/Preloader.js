@@ -39,6 +39,9 @@ BasicGame.Preloader.prototype = {
         this.load.json('moduledata', 'assets/data/mod1.json');
         
         this.load.bitmapFont('carrier_command', 'assets/fonts/carrier_command.png', 'assets/fonts/carrier_command.xml');
+        
+        this.load.atlasJSONHash('sprite1', 'assets/images/minigame2/01.png', 'assets/images/minigame2/01.json');
+        this.load.atlasJSONHash('sprite2', 'assets/images/minigame2/02.png', 'assets/images/minigame2/02.json');
 
 	},
 

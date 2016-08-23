@@ -1,0 +1,172 @@
+{"frames": [
+
+{
+	"filename": "ELB_back-btn_down.png",
+	"frame": {"x":817,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_back-btn_hover.png",
+	"frame": {"x":1183,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_back-btn_idle.png",
+	"frame": {"x":1427,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_cancel-btn_down.png",
+	"frame": {"x":1061,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_cancel-btn_hover.png",
+	"frame": {"x":939,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_cancel-btn_idle.png",
+	"frame": {"x":2,"y":125,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_continue-btn_down.png",
+	"frame": {"x":1305,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_continue-btn_hover.png",
+	"frame": {"x":695,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_continue-btn_idle.png",
+	"frame": {"x":207,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_dropmenu-btn_down.png",
+	"frame": {"x":2,"y":291,"w":553,"h":164},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":553,"h":164},
+	"sourceSize": {"w":553,"h":164}
+},
+{
+	"filename": "ELB_dropmenu-btn_hover.png",
+	"frame": {"x":1038,"y":125,"w":552,"h":164},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":552,"h":164},
+	"sourceSize": {"w":552,"h":164}
+},
+{
+	"filename": "ELB_dropmenu-btn_idle.png",
+	"frame": {"x":557,"y":291,"w":553,"h":164},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":553,"h":164},
+	"sourceSize": {"w":553,"h":164}
+},
+{
+	"filename": "ELB_menu-btn_down.png",
+	"frame": {"x":329,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_menu-btn_hover.png",
+	"frame": {"x":451,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_menu-btn_idle.png",
+	"frame": {"x":573,"y":2,"w":120,"h":121},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":121},
+	"sourceSize": {"w":120,"h":121}
+},
+{
+	"filename": "ELB_mistake_counter.png",
+	"frame": {"x":124,"y":125,"w":232,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":232,"h":101},
+	"sourceSize": {"w":232,"h":101}
+},
+{
+	"filename": "ELB_notificationbox.png",
+	"frame": {"x":631,"y":125,"w":405,"h":88},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":405,"h":88},
+	"sourceSize": {"w":405,"h":88}
+},
+{
+	"filename": "ELB_right_icon.png",
+	"frame": {"x":104,"y":2,"w":101,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":101,"h":101},
+	"sourceSize": {"w":101,"h":101}
+},
+{
+	"filename": "ELB_timer.png",
+	"frame": {"x":358,"y":125,"w":271,"h":116},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":271,"h":116},
+	"sourceSize": {"w":271,"h":116}
+},
+{
+	"filename": "ELB_wrong_icon.png",
+	"frame": {"x":2,"y":2,"w":100,"h":101},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":101},
+	"sourceSize": {"w":100,"h":101}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "01.png",
+	"format": "RGBA8888",
+	"size": {"w":1592,"h":457},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d86f2b3e09449d482203d8127c23e4a2:1/1$"
+}
+}

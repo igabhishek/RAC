@@ -44,7 +44,7 @@ BasicGame.MainMenu.prototype = {
 
 		//this.music.stop();
 
-		this.game.state.start('Game');
+		this.game.state.start('MiniGame2');
 
 	},
 
