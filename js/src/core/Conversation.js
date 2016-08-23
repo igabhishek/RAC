@@ -41,6 +41,20 @@ BasicGame.Conversation.prototype = {
         
         //this.exitButton = this.game.add.button(Math.floor(this.game.width * 0.8), Math.floor(this.game.height * 0.9), 'playButton', this.switchToGameState, this, 2, 1, 0);
         
+        this.character1.animations.add('idle',[
+            'walk-01.png'
+        ]);
+        this.character1.animations.add('walk',[
+            'walk-01.png','walk-02.png','walk-03.png','walk-04.png','walk-05.png','walk-06.png','walk-07.png','walk-08.png'
+        ]);
+        
+        this.character2.animations.add('idle',[
+            'idle00.png'
+        ]);
+        this.character2.animations.add('walk',[
+            'walk01.png','walk02.png','walk04.png','walk05.png'
+        ]);
+        
         this.initializeConversation();
         
 	},
@@ -73,13 +87,26 @@ BasicGame.Conversation.prototype = {
         
         this.dialogueText.text = currentDialogueObj.thedialogue;
         
+        if(currentDialogueObj.whosays == "hero"){
+            
+            this.character1.animations.play("walk", 10, true);
+            this.character2.animations.play("idle", 10, true);
+            
+        } else {
+            
+            this.character1.animations.play("idle", 10, true);
+            this.character2.animations.play("walk", 10, true);
+            
+        }
+        
         if(currentDialogueObj.next != "finish"){
             
             setTimeout(function() { self.playDialogue(currentDialogueObj.next); }, currentDialogueObj.duration * 1000);
         }
         else{
             
-            this.switchToGameState();
+            setTimeout(function() { self.switchToGameState(); }, currentDialogueObj.duration * 1000);
+            //this.switchToGameState();
         }
     },
     
