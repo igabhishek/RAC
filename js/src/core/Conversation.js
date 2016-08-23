@@ -49,7 +49,7 @@ BasicGame.Conversation.prototype = {
         ]);
         
         this.character2.animations.add('idle',[
-            'idle00.png'
+            'walk01.png'
         ]);
         this.character2.animations.add('walk',[
             'walk01.png','walk02.png','walk04.png','walk05.png'

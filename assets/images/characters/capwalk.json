@@ -1,0 +1,76 @@
+{"frames": [
+
+{
+	"filename": "walk01.png",
+	"frame": {"x":0,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk02.png",
+	"frame": {"x":187,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk03.png",
+	"frame": {"x":374,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk04.png",
+	"frame": {"x":561,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk05.png",
+	"frame": {"x":748,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk06.png",
+	"frame": {"x":935,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk07.png",
+	"frame": {"x":1122,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+},
+{
+	"filename": "walk08.png",
+	"frame": {"x":1309,"y":0,"w":187,"h":324},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":187,"h":324},
+	"sourceSize": {"w":187,"h":324}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "capwalk.png",
+	"format": "RGBA8888",
+	"size": {"w":1496,"h":324},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9db87de375b3fde5d33f3e4f721ae72a:c753a96492a5e00edc86f5cacd23aabd:9470fa1c1d59379acb84030f1f5e9304$"
+}
+}

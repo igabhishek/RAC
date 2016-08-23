@@ -21,6 +21,7 @@ BasicGame.Game = function (game) {
 
     this.hero = null;
     this.npc = null;
+    this.npc1 = null;
 
     this.mouseTargetX = null;
     this.mouseTargeY = null;
@@ -47,6 +48,7 @@ BasicGame.Game.prototype = {
 		this.roomCreate();
         //this.inventoryCreate();
         this.lungurCreate();
+        this.capwalkCreate();
         this.heroCreate();
         
         //this.world.setBounds(0, 0, this.configJSON.gamebounds.width, this.configJSON.gamebounds.height);
@@ -66,12 +68,21 @@ BasicGame.Game.prototype = {
         {
             this.npc.alpha = 0.5;
         }
+        
+        if(this.npc1.input.pointerOver())
+        {
+            this.npc1.alpha = 1;
+        }
+        else
+        {
+            this.npc1.alpha = 0.5;
+        }
 
 	},
 
     heroCreate: function(){
         
-        this.hero = this.game.add.sprite(this.game.world.centerX, 450, 'hero');
+        this.hero = this.game.add.sprite(250, 450, 'hero');
         this.hero.anchor.setTo(0.5, 1);
         //this.hero.scale.setTo(2, 2);
         this.hero.animations.add('idle',[
@@ -82,8 +93,25 @@ BasicGame.Game.prototype = {
         ]);
         this.hero.animations.play('idle', 6, true);
         this.hero.isWalking = false;
+        this.hero.scale.x = -1;
 
         this.input.onDown.add(this.moveSprite, this);
+    },
+    
+    capwalkCreate: function(){
+        
+        this.npc1 = this.game.add.sprite(this.levelDataJSON.npc1.x, 300, 'capwalk');
+        this.npc1.anchor.setTo(0.5, 0.5);
+        this.npc1.scale.setTo(-0.75, 0.75);
+        this.npc1.animations.add('idle',[
+            'walk01.png'
+        ]);
+        this.npc1.animations.add('walk',[
+            'walk01.png','walk02.png','walk04.png','walk05.png','walk06.png','walk07.png','walk08.png'
+        ]);
+        this.npc1.animations.play('idle', 6, true);
+        this.npc1.inputEnabled = true;
+        this.npc1.events.onInputDown.add(this.switchToConversationState, this);
     },
 
     roomCreate: function(){
@@ -127,12 +155,12 @@ BasicGame.Game.prototype = {
         this.npc.animations.play('idle', 6, true);
         this.npc.inputEnabled = true;
         this.npc.events.onInputDown.add(this.switchToConversationState, this);
-
     },
     
-    switchToConversationState: function(){
+    switchToConversationState: function(sprite){
         
-        this.game.state.start('Conversation', true, false, 'hero', 'lungur');   
+        //console.log(sprite.key);
+        this.game.state.start('Conversation', true, false, 'hero', sprite.key);   
     },
 
     heroUpdate: function(){
