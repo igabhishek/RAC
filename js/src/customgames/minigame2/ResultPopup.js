@@ -2,7 +2,7 @@ var popup;
 var tween = null;
 var continueButton;
 var l_continueBtnTxt;
-var l_feedbackTxt
+var l_feedbackTxt;
 
 BasicGame.ResultPopup = function (game) {
 //    this.next = null;

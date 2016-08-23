@@ -147,7 +147,14 @@ BasicGame.MiniGame2.prototype = {
     },
 
     onDragStop : function(sprite, pointer) {
-         if (sprite.overlap(m_characterBG)) 
+        
+        var boundsA = sprite.getBounds();
+        var boundsB = m_characterBG.getBounds();
+        var l_spriteIntersection = Phaser.Rectangle.intersection(boundsA, boundsB);
+        
+        //         if (sprite.overlap(m_characterBG))       // Use this code when there is no condition of percentage of intersect
+
+        if(l_spriteIntersection.width > sprite.width* 0.5) //if width of intersection is greater than half of width of sprite
          { 
             m_submitBtn.alpha = 1;
             m_SelectedOptions.push(sprite.name);
