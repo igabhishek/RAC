@@ -24,25 +24,15 @@ BasicGame.Preloader.prototype = {
 		this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');
         */
         
-        this.load.image('titlepage', 'assets/images/Phaser-2D-Flat.png');
-        this.load.atlas('tiles', 'assets/images/walk.png', 'assets/images/walk.json');
-        this.load.atlas('playButton', 'assets/images/button_texture_atlas.png', 'assets/images/button_texture_atlas.json');
+        this.load.image('titlepage', 'assets/images/ui/Phaser-2D-Flat.png');
+        this.load.atlas('playButton', 'assets/images/ui/button_texture_atlas.png', 'assets/images/ui/button_texture_atlas.json');
 
-        this.load.image('room', 'assets/images/room.png');
-        this.load.image('inventory', 'assets/images/Inventory.png');
+        this.load.image('room', 'assets/images/environment/room.png');
+        this.load.image('inventory', 'assets/images/ui/Inventory.png');
         
-        this.load.image('bg01', 'assets/images/level/01.jpg');
-        this.load.image('bg02', 'assets/images/level/02.jpg');
-        this.load.image('bg03', 'assets/images/level/03.jpg');
-        this.load.image('bg04', 'assets/images/level/04.jpg');
-        this.load.image('bg05', 'assets/images/level/05.jpg');
-        this.load.image('bg06', 'assets/images/level/06.jpg');
-        this.load.image('bg07', 'assets/images/level/07.jpg');
-        
-        this.load.atlasJSONHash('lampkey', 'assets/images/lampkey.png', 'assets/images/lampkey.json');
-        this.load.atlasJSONHash('hero', 'assets/images/walk.png', 'assets/images/walk.json');
-        this.load.atlasJSONHash('lungur', 'assets/images/lungur.png', 'assets/images/lungur.js');
-        this.load.atlasJSONHash('bg', 'assets/images/bg.png', 'assets/images/bg.json');
+        this.load.atlasJSONHash('hero', 'assets/images/characters/walk.png', 'assets/images/characters/walk.json');
+        this.load.atlasJSONHash('lungur', 'assets/images/characters/lungur.png', 'assets/images/characters/lungur.js');
+        this.load.atlasJSONHash('bg', 'assets/images/environment/bg.png', 'assets/images/environment/bg.json');
         
         this.load.json('config', 'assets/data/config.json');
         this.load.json('leveldata', 'assets/data/levelData.json');

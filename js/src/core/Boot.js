@@ -8,8 +8,8 @@ BasicGame.Boot.prototype = {
 
 	preload: function () {
 
-		this.load.image('preloaderBackground', 'assets/images/preloader_background.jpg');
-		this.load.image('preloaderBar', 'assets/images/preloader_bar.png');
+		this.load.image('preloaderBackground', 'assets/images/ui/preloader_background.jpg');
+		this.load.image('preloaderBar', 'assets/images/ui/preloader_bar.png');
 
 	},
 
