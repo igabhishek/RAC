@@ -108,7 +108,9 @@ BasicGame.Game.prototype = {
     },
     
     inventoryCreate: function(){
+        
         this.inventory = this.game.add.sprite(0,this.game.world.height - 173, 'inventory');
+        
     },
 
     lungurCreate: function(){
@@ -129,7 +131,8 @@ BasicGame.Game.prototype = {
     },
     
     switchToConversationState: function(){
-         this.game.state.start('Conversation', true, false, 'hero', 'lungur');   
+        
+        this.game.state.start('Conversation', true, false, 'hero', 'lungur');   
     },
 
     heroUpdate: function(){

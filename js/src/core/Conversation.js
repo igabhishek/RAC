@@ -112,6 +112,16 @@ BasicGame.Conversation.prototype = {
     
     switchToGameState: function() {
         
+        this.character1 = null;
+        this.character2 = null;
+
+        this.character1Name = null;
+        this.character2Name = null;
+
+        this.exitButton = null;
+        this.dialogueCloud = null;
+        this.dialogueText = null;
+        
         this.game.state.start('Game', true, false);   
         
     }
